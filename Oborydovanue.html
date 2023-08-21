@@ -8,46 +8,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script>
         function createForm() {
-            var form = document.createElement("form");
-            var divL = document.createElement("div");
-            var div = document.createElement("div");
-            var p = document.createElement("p");
-            var selectf = document.createElement("select"); 
-            var option0 = document.createElement("option");
-            var option1 = document.createElement("option"); 
-            var option2 = document.createElement("option"); 
-            var option3 = document.createElement("option");
-            var div1 = document.createElement("div");  
-            var p1 = document.createElement("p");  
-            var selects = document.createElement("select");
-            var optiond = document.createElement("option"); 
-            var div2 = document.createElement("div");  
-            var p2 = document.createElement("p"); 
-            var input2 = document.createElement("input"); 
-            var div3 = document.createElement("div");  
-            var p3 = document.createElement("p"); 
-            var input3 = document.createElement("input");  
-            var div4 = document.createElement("div");  
-            var p4 = document.createElement("p"); 
-            var input4 = document.createElement("input");  
-            var div5 = document.createElement("div");  
-            var p5 = document.createElement("p"); 
-            var input5 = document.createElement("input");   
-            var div6 = document.createElement("div");  
-            var p6 = document.createElement("p"); 
-            var input6 = document.createElement("input");
-            var div7 = document.createElement("div");  
-            var p7 = document.createElement("p"); 
-            var input7 = document.createElement("input");
-            var div8 = document.createElement("div");
-            var p8 = document.createElement("p");
-            var select = document.createElement("select"); 
-            var option8 = document.createElement("option");
-            var option8_1 = document.createElement("option"); 
-            var button = document.createElement("button");                                                        
-    
-            form.setAttribute("method", "post");
-            form.setAttribute("id", "form");
+            // let form = document.createElement("div");
+            let divL = document.createElement("div");
+            let div = document.createElement("div");
+            let p = document.createElement("p");
+            let selectf = document.createElement("select"); 
+            let option0 = document.createElement("option");
+            let option1 = document.createElement("option"); 
+            let option2 = document.createElement("option"); 
+            let option3 = document.createElement("option");
+            let div1 = document.createElement("div");  
+            let p1 = document.createElement("p");  
+            let selects = document.createElement("select");
+            let optiond = document.createElement("option"); 
+            let div2 = document.createElement("div");  
+            let p2 = document.createElement("p"); 
+            let input2 = document.createElement("input"); 
+            let div3 = document.createElement("div");  
+            let p3 = document.createElement("p"); 
+            let input3 = document.createElement("input");  
+            let div4 = document.createElement("div");  
+            let p4 = document.createElement("p"); 
+            let input4 = document.createElement("input");  
+            let div5 = document.createElement("div");  
+            let p5 = document.createElement("p"); 
+            let input5 = document.createElement("input");   
+            let div6 = document.createElement("div");  
+            let p6 = document.createElement("p"); 
+            let input6 = document.createElement("input");
+            let div7 = document.createElement("div");  
+            let p7 = document.createElement("p"); 
+            let input7 = document.createElement("input");
+            let div8 = document.createElement("div");
+            let p8 = document.createElement("p");
+            let select = document.createElement("select"); 
+            let option8 = document.createElement("option");
+            let option8_1 = document.createElement("option"); 
+            let button = document.createElement("button");                                                        
+
+            // form.setAttribute("method", "post");
+            // form.setAttribute("id", "form");
             divL.setAttribute("class", "LogIn");
             div.setAttribute("class", "div");
             selectf.setAttribute("id", "first");
@@ -74,7 +74,10 @@
             input7.setAttribute("type", "text");
             div8.setAttribute("class", "div");
             button.setAttribute("class", "bit");
-            button.setAttribute("onclick", "removeForm()");
+
+            button.addEventListener("click", function(){
+                divL.parentNode.removeChild(divL);
+            });
 
             p.textContent = "Тип устройства";
             option0.textContent = "Не выбрано";
@@ -94,7 +97,7 @@
             option8_1.textContent = "В ремонте";
             button.textContent = "Удалить";
 
-            form.appendChild(divL);
+            // form.appendChild(divL);
             divL.appendChild(div);
             div.appendChild(p);
             div.appendChild(selectf);
@@ -140,11 +143,6 @@
 
             divL.appendChild(button);
 
-            function removeForm() {
-                var form = document.getElementById("form");
-                form.parentNode.removeChild(form);
-            }
-
             const firstDropdown = selectf;
             const secondDropdown = selects;     
             firstDropdown.addEventListener("change", function() {
@@ -167,9 +165,9 @@
                     secondDropdown.appendChild(optionElement);
                 });
             });
-            let but = document.querySelector('#button')
+            let but = document.querySelector('#button');
 
-            document.body.insertBefore(form, but);
+            document.body.insertBefore(divL, but);
         }
     </script>
     
