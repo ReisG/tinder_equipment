@@ -74,7 +74,7 @@
             input7.setAttribute("type", "text");
             div8.setAttribute("class", "div");
             button.setAttribute("class", "bit");
-            button.setAttribute("onclick", "removeForm(event)");
+            button.setAttribute("onclick", "removeForm()");
 
             p.textContent = "Тип устройства";
             option0.textContent = "Не выбрано";
@@ -140,11 +140,11 @@
 
             divL.appendChild(button);
 
-            function removeForm(event) {
-                var button = event.target;
-                var form = button.parentNode;
-                form.remove();
+            function removeForm() {
+                var form = document.getElementById("form");
+                form.parentNode.removeChild(form);
             }
+
             const firstDropdown = selectf;
             const secondDropdown = selects;     
             firstDropdown.addEventListener("change", function() {
