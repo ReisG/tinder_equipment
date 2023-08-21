@@ -43,9 +43,11 @@
             var p8 = document.createElement("p");
             var select = document.createElement("select"); 
             var option8 = document.createElement("option");
-            var option8_1 = document.createElement("option");                                                         
+            var option8_1 = document.createElement("option"); 
+            var button = document.createElement("button");                                                        
     
             form.setAttribute("method", "post");
+            form.setAttribute("id", "form");
             divL.setAttribute("class", "LogIn");
             div.setAttribute("class", "div");
             selectf.setAttribute("id", "first");
@@ -71,6 +73,8 @@
             div7.setAttribute("class", "div");
             input7.setAttribute("type", "text");
             div8.setAttribute("class", "div");
+            button.setAttribute("class", "bit");
+            button.setAttribute("onclick", "removeForm(event)");
 
             p.textContent = "Тип устройства";
             option0.textContent = "Не выбрано";
@@ -88,6 +92,7 @@
             p8.textContent = "Статус";
             option8.textContent = "В работе";
             option8_1.textContent = "В ремонте";
+            button.textContent = "Удалить";
 
             form.appendChild(divL);
             divL.appendChild(div);
@@ -133,6 +138,13 @@
             select.appendChild(option8);
             select.appendChild(option8_1);
 
+            divL.appendChild(button);
+
+            function removeForm(event) {
+                var button = event.target;
+                var form = button.parentNode;
+                form.remove();
+            }
             const firstDropdown = selectf;
             const secondDropdown = selects;     
             firstDropdown.addEventListener("change", function() {
