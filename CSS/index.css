@@ -21,7 +21,7 @@ html{
 .LogIn{
     background: white;
     width: 90%;
-    height: 800px;
+    height: 750px;
     border-radius: 10px;
     border-style: solid;
     border-color: #00457a;
@@ -57,6 +57,7 @@ input{
 p{
     font-size: 120%;
     text-align: left;
+    margin-left: 5%;
     font-family: 'Montserrat', sans-serif;
 }
 
