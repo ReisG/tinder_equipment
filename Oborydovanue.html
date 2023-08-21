@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/Oborydovanue.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script>
+        function createForm() {
+            var form = document.createElement("form");
+            var divL = document.createElement("div");
+            var div = document.createElement("div");
+            var p = document.createElement("p");
+            var selectf = document.createElement("select"); 
+            var option0 = document.createElement("option");
+            var option1 = document.createElement("option"); 
+            var option2 = document.createElement("option"); 
+            var option3 = document.createElement("option");
+            var div1 = document.createElement("div");  
+            var p1 = document.createElement("p");  
+            var selects = document.createElement("select");
+            var optiond = document.createElement("option"); 
+            var div2 = document.createElement("div");  
+            var p2 = document.createElement("p"); 
+            var input2 = document.createElement("input"); 
+            var div3 = document.createElement("div");  
+            var p3 = document.createElement("p"); 
+            var input3 = document.createElement("input");  
+            var div4 = document.createElement("div");  
+            var p4 = document.createElement("p"); 
+            var input4 = document.createElement("input");  
+            var div5 = document.createElement("div");  
+            var p5 = document.createElement("p"); 
+            var input5 = document.createElement("input");   
+            var div6 = document.createElement("div");  
+            var p6 = document.createElement("p"); 
+            var input6 = document.createElement("input");
+            var div7 = document.createElement("div");  
+            var p7 = document.createElement("p"); 
+            var input7 = document.createElement("input");
+            var div8 = document.createElement("div");
+            var p8 = document.createElement("p");
+            var select = document.createElement("select"); 
+            var option8 = document.createElement("option");
+            var option8_1 = document.createElement("option");                                                         
+    
+            form.setAttribute("method", "post");
+            divL.setAttribute("class", "LogIn");
+            div.setAttribute("class", "div");
+            selectf.setAttribute("id", "first");
+            option0.setAttribute("value", "option0");
+            option1.setAttribute("value", "option1");
+            option2.setAttribute("value", "option2");
+            option3.setAttribute("value", "option3");
+            div1.setAttribute("class", "div");
+            selects.setAttribute("id", "second");
+            optiond.setAttribute("value", "default");
+            div2.setAttribute("class", "div");
+            input2.setAttribute("type", "text");
+            div3.setAttribute("class", "div");
+            input3.setAttribute("type", "text");
+            input3.setAttribute("maxlength", "6");
+            input3.setAttribute("minlength", "6");
+            div4.setAttribute("class", "div");
+            input4.setAttribute("type", "text");
+            div5.setAttribute("class", "div");
+            input5.setAttribute("type", "text");
+            div6.setAttribute("class", "div");
+            input6.setAttribute("type", "date");
+            div7.setAttribute("class", "div");
+            input7.setAttribute("type", "text");
+            div8.setAttribute("class", "div");
+
+            p.textContent = "Тип устройства";
+            option0.textContent = "Не выбрано";
+            option1.textContent = "Генерирующие оборудование";
+            option2.textContent = "Накопитель";
+            option3.textContent = "Преобразователь";
+            p1.textContent = "Устройство";
+            optiond.textContent = "Выберите устройство выше";
+            p2.textContent = "Модель";
+            p3.textContent = "Номер сертификата";
+            p4.textContent = "Генерирующая мощность";
+            p5.textContent = "Ёмкость (для накопителей)";
+            p6.textContent = "Дата установки";
+            p7.textContent = "Срок эксплуатации";
+            p8.textContent = "Статус";
+            option8.textContent = "В работе";
+            option8_1.textContent = "В ремонте";
+
+            form.appendChild(divL);
+            divL.appendChild(div);
+            div.appendChild(p);
+            div.appendChild(selectf);
+            selectf.appendChild(option0);
+            selectf.appendChild(option1);
+            selectf.appendChild(option2);
+            selectf.appendChild(option3);
+
+            divL.appendChild(div1);
+            div1.appendChild(p1);
+            div1.appendChild(selects);
+            selects.appendChild(optiond);
+
+            divL.appendChild(div2);
+            div2.appendChild(p2);
+            div2.appendChild(input2);
+
+            divL.appendChild(div3);
+            div3.appendChild(p3);
+            div3.appendChild(input3);
+
+            divL.appendChild(div4);
+            div4.appendChild(p4);
+            div4.appendChild(input4);
+
+            divL.appendChild(div5);
+            div5.appendChild(p5);
+            div5.appendChild(input5);
+
+            divL.appendChild(div6);
+            div6.appendChild(p6);
+            div6.appendChild(input6);
+
+            divL.appendChild(div7);
+            div7.appendChild(p7);
+            div7.appendChild(input7);
+
+            divL.appendChild(div8);
+            div8.appendChild(p8);
+            div8.appendChild(select);
+            select.appendChild(option8);
+            select.appendChild(option8_1);
+
+            const firstDropdown = selectf;
+            const secondDropdown = selects;     
+            firstDropdown.addEventListener("change", function() {
+                const selectedValue = firstDropdown.value;
+                let options = [];              
+                if (selectedValue === "option1") {
+                    options = ["Солнечные панели", "Дизельный генератор", "Ветряной генератор", "Гидрогенератор"];
+                } else if (selectedValue === "option2") {
+                    options = ["Накопитель энергии", "Электромобиль"];
+                } else if (selectedValue === "option3") {
+                    options = ["Инвертор", "Активный фильтр"];
+                } else if (selectedValue === "option0") {
+                    options = ["Выберите устройство выше"]
+                }
+                secondDropdown.innerHTML = "";
+                options.forEach(function(option) {
+                    const optionElement = document.createElement("option");
+                    optionElement.value = option;
+                    optionElement.text = option;
+                    secondDropdown.appendChild(optionElement);
+                });
+            });
+            let but = document.querySelector('#button')
+
+            document.body.insertBefore(form, but);
+        }
+    </script>
+    
+</head>
+<body>
+    <p id="send">Создание энергетического блока</p>
+    <button onclick="createForm()" id="button">Добавить оборудование</button>
+</body>
+</html>
