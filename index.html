@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="CSS/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script src=".Script/index.js"></script>
+    <script src="./Script/index.js"></script>
     <script>
         function createForm() {
             // let form = document.createElement("div");
@@ -175,15 +175,16 @@
                     secondDropdown.appendChild(optionElement);
                 });
             });
-            let but = document.querySelector('#button');
+            let cont = document.getElementById('data_container');
 
-            document.body.insertBefore(divL, but);
+            cont.appendChild(divL);
         }
     </script>
     
 </head>
 <body>
     <p id="send">Создание энергетического блока</p>
+    <div id="data_container"></div>
     <button onclick="createForm()" id="button">Добавить оборудование</button>
     <script>
         // creating alias for window.Telegram.WebApp for easier access
