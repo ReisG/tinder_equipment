@@ -45,7 +45,7 @@ function fetchData() {
         device_status = device_status_option[device_status];
 
         let data = {
-            "unit_function": unit_function,
+            "unit_f": unit_function,
             "unit_type": unit_type,
             "unit_name": unit_name,
             "certificate": certificate,
