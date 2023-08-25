@@ -59,5 +59,7 @@ function fetchData() {
         res.push(data);
     }
 
+    res["web_app_name"] = "block_creation";
+
     return res;
 }
