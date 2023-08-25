@@ -6,6 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="CSS/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src=".Script/index.js"></script>
     <script>
         function createForm() {
             // let form = document.createElement("div");
@@ -66,7 +68,7 @@
             input3.setAttribute("type", "text");
             input3.setAttribute("maxlength", "6");
             input3.setAttribute("minlength", "6");
-            input3.setAttribute("id", "certificatc");
+            input3.setAttribute("id", "certificate");
             div4.setAttribute("class", "div");
             input4.setAttribute("type", "text");
             input4.setAttribute("id", "gen_power");
@@ -183,5 +185,23 @@
 <body>
     <p id="send">Создание энергетического блока</p>
     <button onclick="createForm()" id="button">Добавить оборудование</button>
+    <script>
+        // creating alias for window.Telegram.WebApp for easier access
+        let tg = window.Telegram.WebApp;
+
+        function sendData() {
+            // Формируем объект с данными
+            let data = fetchData();
+
+            // Отправляем данные в бот
+            tg.sendData(JSON.stringify(data));
+        }
+
+        // mainButton.onClick(sendEventData);
+        tg.onEvent('mainButtonClicked', sendData);
+        tg.mainButton.show();
+        tg.expend();
+        tg.ready();
+    </script>
 </body>
 </html>
