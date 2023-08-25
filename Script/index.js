@@ -3,10 +3,10 @@ function fetchData() {
     let res = [];
 
     let unit_function_option = {
-        "Не выбрано": "not_selected",
-        "Генерирующие оборудование": "gen_equipment",
-        "Накопитель": "storage",
-        "Преобразователь": "convertor",
+        "option0": "not_selected",
+        "option1": "gen_equipment",
+        "option2": "storage",
+        "option3": "convertor",
     }
 
     let unit_type_option = {
