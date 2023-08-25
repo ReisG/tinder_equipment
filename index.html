@@ -187,7 +187,7 @@
     <button onclick="createForm()" id="button">Добавить оборудование</button>
     <script>
         // creating alias for window.Telegram.WebApp for easier access
-        let tg = window.Telegram.WebApp;
+        var tg = window.Telegram.WebApp;
 
         function sendData() {
             // Формируем объект с данными
@@ -199,7 +199,7 @@
 
         // mainButton.onClick(sendEventData);
         tg.onEvent('mainButtonClicked', sendData);
-        tg.mainButton.show();
+        tg.MainButton.show();
         tg.expend();
         tg.ready();
     </script>
