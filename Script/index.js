@@ -45,15 +45,15 @@ function fetchData() {
         device_status = device_status_option[device_status];
 
         let data = {
-            unit_function: unit_function,
-            unit_type: unit_type,
-            unit_name: unit_name,
-            certificate: certificate,
-            gen_power: gen_power,
-            battery_capacity: battery_capacity,
-            installation_date: installation_date,
-            service_life: service_life,
-            device_status: device_status,
+            "unit_function": unit_function,
+            "unit_type": unit_type,
+            "unit_name": unit_name,
+            "certificate": certificate,
+            "gen_power": gen_power,
+            "battery_capacity": battery_capacity,
+            "installation_date": installation_date,
+            "service_life": service_life,
+            "device_status": device_status,
         }
 
         res.push(data);
